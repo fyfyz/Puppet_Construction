@@ -1,0 +1,86 @@
+﻿@model Puppet.Models.HouseDesign
+
+@{
+    ViewBag.Title = "Details";
+     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+<section class="container mt-5 pt-5">
+    <div class="d-flex justify-content-center">
+        <div class="col-lg-6 mb-3">
+            <div class="border px-5 pb-5 bg-white rounded h-auto">
+
+                <div class="my-4" style="font-size: 1.5rem">
+                    Details
+                </div>
+                <div>
+                    <h4>HouseDesign</h4>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Name)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.BuildingType)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.BuildingType)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Dimension)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Dimension)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Description)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Description)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Price)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Price)
+                        </dd>
+                        @if (Model.Files.Any(f => f.FileType == FileType.Avatar))
+                        {
+                            <dt>
+                                Image
+                            </dt>
+                            <dd>
+                                <img src="~/File?id=@Model.Files.First(f => f.FileType == FileType.Avatar).FileId" style="width:400px!important" alt="image" />
+                            </dd>
+                        }
+                    </dl>
+                </div>
+            <div>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,51 @@
+﻿@model Puppet.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_LayoutForLogin.cshtml";
+}
+
+<section class="container mt-5 pt-5">
+    <div class="d-flex justify-content-center">
+        <div class="col-lg-6 mb-3">
+            <div class="border px-5 pb-5 bg-white rounded h-custom">
+
+                <div class="my-4" style="font-size: 1.5rem">
+                    Register
+                </div>
+                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-group">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text w-custom">Email</span>
+                            </div>
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                        </div>
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })                        
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text w-custom">password</span>
+                            </div>
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                        </div>
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text w-custom">Confirm</span>
+                            </div>
+                            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                        </div>
+                        @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+                        <input type="submit" value="Register" class="btn btn-outline-dark-custom mb-2 btn-block" />
+                        <div class="mb-3 ml-2">
+                            @Html.ActionLink("Login Here", "Login")
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+    </div>
+</section>

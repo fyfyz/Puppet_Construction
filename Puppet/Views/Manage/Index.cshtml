@@ -1,0 +1,31 @@
+﻿@model Puppet.Models.IndexViewModel
+@{
+    ViewBag.Title = "Manage";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section class="container mt-5 pt-5 d-flex justify-content-center">
+
+    <div class="col-lg-6 ">
+        <div class="border px-5 pb-5 bg-white rounded h-custom">
+            <div class="my-4" style="font-size: 1.5rem">
+                Manage
+            </div>
+            <form>
+                <div class="form-group">
+                    <div class="input-group mb-3">
+                        @Html.ActionLink("Change your password", "ChangePassword")
+                    </div>
+                    <div class="input-group mb-3">
+                        @if (User.IsInRole("Manager"))
+                        {
+                            @Html.ActionLink("Manage House Design", "Index", "HouseDesign");
+                        }
+
+                        
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

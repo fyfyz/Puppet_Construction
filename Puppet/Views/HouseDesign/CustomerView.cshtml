@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Puppet.Models.HouseDesign>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<div class="container mt-5 pt-5">
+    <div class="row">
+        <h2>View House Design</h2>
+        <div class="row" id="pagination">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-6 col-xs-12 thumb card mb-3 abc">
+                    <div class="thumbnail">
+                        <img class="img-thumbnail"
+                             src="~/File?id=@item.Files.First(f => f.FileType == FileType.Avatar).FileId" alt="image">
+                        <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
+                        <h4>Price : @Html.DisplayFor(modelItem => item.Price)</h4>
+                        <h5>Description : @Html.DisplayFor(modelItem => item.Description)</h5>
+                        <h5>Building Type : @Html.DisplayFor(modelItem => item.BuildingType)</h5>
+                        <h5>Dimension : @Html.DisplayFor(modelItem => item.Dimension)</h5>
+                    </div>
+                </div>
+            }
+
+        </div>
+
+
+    </div>
+</div>
+

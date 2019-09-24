@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Puppet Construction</title>
+
+    @Styles.Render("~/Content/css")
+
+
+</head>
+
+<body id="page-top" class="text-monospace">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top bg-yellow " id="mainNav">
+        <div class="container">
+            <div class="navbar-brand text-dark ">
+                <img src="~/images/logo.png" width="25px" height="25px" alt="puppet">
+                Puppet Construction
+            </div>
+            <button class="navbar-toggler navbar-toggler-right text-dark" type="button" data-toggle="collapse"
+                    data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            @Html.Partial("_NavBar")
+        </div>
+    </nav>
+
+    @RenderBody()
+
+    <!-- Footer -->
+    <footer class="footer text-center pb-4">
+        <div class="container">
+            <ul class="list-inline mb-3">
+
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white" href="https://github.com/fyfyz/">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+            </ul>
+            <p class="text-muted small mb-0">Copyright &copy; avies.app 2019</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    @Scripts.Render("~/bundles/lib")
+
+
+
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>
