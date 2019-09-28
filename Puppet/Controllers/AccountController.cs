@@ -157,10 +157,10 @@ namespace Puppet.Controllers
                 if (result.Succeeded)
                 {
                     //Temp Code
-                    var roleStore = new RoleStore<IdentityRole>(new ApplicationDbContext());
-                    var roleManager = new RoleManager<IdentityRole>(roleStore);
-                    await roleManager.CreateAsync(new IdentityRole("Manager"));
-                    await UserManager.AddToRoleAsync(user.Id, "Manager");
+                    //var roleStore = new RoleStore<IdentityRole>(new ApplicationDbContext());
+                    //var roleManager = new RoleManager<IdentityRole>(roleStore);
+                    //await roleManager.CreateAsync(new IdentityRole("Manager"));
+                    //await UserManager.AddToRoleAsync(user.Id, "Manager");
 
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
