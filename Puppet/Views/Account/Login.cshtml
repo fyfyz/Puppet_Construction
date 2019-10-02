@@ -10,8 +10,8 @@
             <div class="border px-5 pb-5 bg-white rounded h-custom">
 
                 <div class="my-4" style="font-size: 1.5rem">
-                    returning user?<br>
-                    Login.
+                    <br>
+                    Login
                 </div>
                 @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                 {
@@ -27,7 +27,7 @@
                         @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <span class="input-group-text w-custom">password</span>
+                                <span class="input-group-text w-custom">Password</span>
                             </div>
                             @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
                         </div>
@@ -35,12 +35,12 @@
                         <div class="input-group mb-1">
                             <div class="input-group-text bg-transparent border-0">
                                 @Html.CheckBoxFor(m => m.RememberMe)
-                                remember me
+                                 Remember me
                             </div>
                         </div>
                         <input type="submit" value="Login" class="btn btn-outline-dark-custom mb-2 btn-block" />
                         <div class="mb-3 ml-2">
-                            @Html.ActionLink("Register as a new user", "Register")
+                            @Html.ActionLink("Register as a new user?", "Register")
                         </div>
                     </div>
                 }

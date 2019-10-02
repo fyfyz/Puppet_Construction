@@ -9,20 +9,28 @@
     <div class="col-lg-6 ">
         <div class="border px-5 pb-5 bg-white rounded h-custom">
             <div class="my-4" style="font-size: 1.5rem">
-                Manage
+                Manage !
             </div>
             <form>
                 <div class="form-group">
                     <div class="input-group mb-3">
                         @Html.ActionLink("Change your password", "ChangePassword")
                     </div>
+                    
                     <div class="input-group mb-3">
                         @if (User.IsInRole("Manager"))
                         {
                             @Html.ActionLink("Manage House Design", "Index", "HouseDesign");
                         }
-
-                        
+                        else
+                        {
+                            <div class="input-group mb-3">
+                                @Html.ActionLink("View House Design", "CustomerView", "HouseDesign")
+                            </div>
+                            <div class="input-group mb-3">
+                                @Html.ActionLink("Calculator", "Calculator", "HouseDesign")
+                            </div>
+                        }
                     </div>
                 </div>
             </form>

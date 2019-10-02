@@ -28,8 +28,9 @@ namespace Puppet.Controllers
             int a = Convert.ToInt32(width);
             int b = Convert.ToInt32(length);
             int c = Convert.ToInt32(floor);
-            int result = a * c * b * 135000;
-            ViewBag.Result = result;
+            double result = a * c * b * 1.35;
+            int resultInt = (int)result;
+            ViewBag.Result = resultInt;
             return View();
 
         }
